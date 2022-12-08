@@ -1,0 +1,172 @@
+/* Fonts + colours */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --lightshades: #FBFDFA;
+    --lightaccent: #9FD3C3;
+    --primary: #6D739A;
+    --darkshades: #763440;
+    --darkaccent: #F77E78;
+}
+
+/* CSS reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+html {
+    font-size: calc(15px + 0.390625vw);
+}
+
+/* Basic styling */
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Quattrocento Sans', sans-serif;
+    background-color: var(--lightshades);
+    color: var(--darkshades);
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+section {
+    padding: 1rem;
+}
+
+/* Hero section */
+
+header {
+    min-height: 85vh;
+    background: url(https://images.unsplash.com/photo-1604611266776-49dcc7a2b5e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 1rem;
+}
+
+header h1,
+header h2 {
+    color: var(--lightshades);
+    max-width: 70%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+header h1 {
+    background: var(--darkshades);
+}
+
+header h2 {
+    background: var(--darkaccent);
+}
+
+/* Activities section */
+
+.activities-section {
+    background: var(--lightaccent);
+}
+
+.activities-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.activity img {
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+
+/*=============================================
+=            Responsive layout            =
+=============================================*/
+
+
+
+
+@media screen and (min-width: 600px) {
+    .activity {
+        max-width: 13rem;
+
+    }
+
+    .activity img {
+        max-width: 6.25rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+    }
+}
