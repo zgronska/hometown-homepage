@@ -5,12 +5,11 @@
 :root {
     --lightshades: #FBFDFA;
     --lightaccent: #9FD3C3;
-    --primary: #6D739A;
     --darkshades: #763440;
     --darkaccent: #F77E78;
 }
 
-/* CSS reset */
+/* CSS reset - https://www.joshwcomeau.com/css/custom-css-reset/ */
 
 *,
 *::before,
@@ -20,7 +19,6 @@
 
 * {
     margin: 0;
-    /* border: 1px solid red; */
 }
 
 html,
@@ -59,11 +57,12 @@ h6 {
     isolation: isolate;
 }
 
+/* Basic styling */
+
 html {
     font-size: calc(15px + 0.390625vw);
+    /* I tried to make it as pixel-perfect to the Figma design as possible, while also making it responsive - https://matthewjamestaylor.com/responsive-font-size */
 }
-
-/* Basic styling */
 
 body {
     line-height: 1.5;
@@ -98,6 +97,12 @@ h3 {
 
 section {
     padding: 2.5rem 2.1rem;
+}
+
+img {
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+    object-fit: cover;
+    border-radius: 1rem;
 }
 
 /* Hero section */
@@ -143,15 +148,13 @@ header h2 {
 .activities-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     gap: 2rem;
 }
 
 .activity img {
     margin: 0 auto;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 1rem;
 }
 
 .activity h4 {
@@ -175,7 +178,6 @@ header h2 {
 }
 
 .guide-container img {
-    border-radius: 0.5rem;
     aspect-ratio: 3 / 4;
     max-width: 50%;
 }
@@ -199,6 +201,33 @@ header h2 {
     content: close-quote;
 }
 
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+}
+
+.icons a {
+    color: var(--lightshades);
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color, transform;
+    transition-property: color, transform;
+}
+
+.icons a:hover,
+.icons a:focus,
+.icons a:active {
+    color: var(--darkshades);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+
 /*=============================================
 =            Responsive layout            =
 =============================================*/
@@ -206,11 +235,10 @@ header h2 {
 @media screen and (min-width: 600px) {
     .activity {
         max-width: 13rem;
-
     }
 
     .activity img {
-        max-width: 6.25rem;
+        max-width: 6.5rem;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
     }
