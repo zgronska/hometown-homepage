@@ -148,7 +148,7 @@ header h2 {
 .activities-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     gap: 2rem;
 }
 
@@ -159,6 +159,37 @@ header h2 {
 
 .activity h4 {
     padding: 1rem;
+}
+
+.activity a {
+    color: var(--darkaccent);
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+
+.activity a:hover,
+.activity a:focus,
+.activity a:active {
+    color: var(--darkshades);
+}
+
+.activity a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--darkshades);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.activity a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* Guide section */
@@ -189,7 +220,6 @@ header h2 {
 
 .guide-text p::before,
 .guide-text p::after {
-    font-size: 1.5rem;
     color: var(--lightshades);
 }
 
